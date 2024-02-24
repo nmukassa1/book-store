@@ -13,7 +13,7 @@ function RootLayout() {
 
     useEffect(() => {
         scrollToTop()
-        // console.log(location);
+        setCartPosition('right-[-100%]')
     }, [location])
 
     const [cartItems, setCartItems] = useState([])
