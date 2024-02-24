@@ -2,12 +2,12 @@ import {Link} from 'react-router-dom'
 
 function RenderCardsViewAll({data, title, id, type, genreName}) {
 
-  //type = fiction or non_fiction
-  //id = am I traversing futher into object value to get specific genre?
-  //genreName = what is the genre, "fantasy", "romance"...
-
+  /*
+    type = fiction or non_fiction
+    id = am I traversing futher into object value to get specific genre?
+    genreName = what is the genre, "fantasy", "romance"...
+  */
     
-
     let dataValues;
     let isArray;
 
@@ -19,7 +19,7 @@ function RenderCardsViewAll({data, title, id, type, genreName}) {
       dataValues = Object.values(data[type].genre[genreName])
       isArray = Array.isArray(data[type].genre[genreName])
     } 
-
+    
     // console.log(dataValues)
     // console.log(isArray)
 

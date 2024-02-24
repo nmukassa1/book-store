@@ -1,5 +1,6 @@
 import { useState } from "react" 
 import { useOutletContext } from "react-router-dom"
+import AddToCartButton from '../Global/AddToCartButton'
 
 function BookPageProductInfo({data}) {
 
@@ -13,7 +14,7 @@ function BookPageProductInfo({data}) {
         }
     }
 
-    const [addToCart] = useOutletContext()
+    // const [addToCart] = useOutletContext()
 
     
 
@@ -33,8 +34,8 @@ function BookPageProductInfo({data}) {
             {/* ADD TO CART BUTTON */}
             {data.quantity > 0 ? (
                 <>
-                    <button className="bg-black text-white px-3 py-2 hover:bg-white hover:text-black hover:border-black hover:border" onClick={addToCart}>Add To Cart</button> 
-                    {/* <span className={`${handleAddToCartAnimation} ml-3`}>✅</span> */}
+                    <AddToCartButton product={data} />
+                    {/* <button className="bg-black text-white px-3 py-2 hover:bg-white hover:text-black hover:border-black hover:border" onClick={addToCart}>Add To Cart</button>  */}
                 </>
             ) : (
                 <button disabled className="bg-black text-white px-3 py-2">Out Of Stock</button>

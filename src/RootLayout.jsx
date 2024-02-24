@@ -20,8 +20,9 @@ function RootLayout() {
     const [confirmAddToCart, setConfirmAddToCart] = useState('hidden')
     const [cartPosition, setCartPosition] = useState('right-[-100%]')
 
-    const addToCart = (product) => {
-        const book = JSON.parse(localStorage.getItem('data'));
+    const addToCart = (data) => {
+        // const book = JSON.parse(localStorage.getItem('data'));
+        const book = data;
         const bookKey = book.key
         //Does item already exist in cart??
         const exist = cartItems.find(item => item.key === bookKey)

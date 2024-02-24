@@ -10,7 +10,7 @@ function Book() {
     const data = JSON.parse(localStorage.getItem('data'))
    
     return ( 
-        <div id='product-section' className='page-height relative grid md:grid-cols-2'>
+        <div id='product-section' className='h-full relative grid md:grid-cols-2'>
             <ProductPageImage img={data.img} />
 
             <ProductPageInfo data={data} />

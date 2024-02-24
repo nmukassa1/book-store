@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import AddToCartButton from '../Global/AddToCartButton'
 
 function RenderCards({data, title, page, id, type}) {
 
@@ -24,8 +25,9 @@ function RenderCards({data, title, page, id, type}) {
                       <img src={item.img} alt="" className="w-3/4 h-full object-contain mx-auto"/>
                     </div>
 
-                    {item.quantity === 0 && (
-                      <div id="" className="book-info p-3 line-through">
+                    {/* {item.quantity > 0 && <AddToCartButton product={item} />} */}
+
+                    <div id="" className={`book-info p-3 ${item.quantity === 0 ? `line-through` : ''}`}>
                         <div id="book-title">
                             <h1>{item.title}</h1>
                           </div>
@@ -38,27 +40,10 @@ function RenderCards({data, title, page, id, type}) {
                             <span>£{item.price}</span>
                           </div>
 
-                          {item.quantity === 0 && (<p>Out Of Stock</p>)}
+                          <p>{item.quantity === 0 ? 'Out Of Stock' : 'In Stock'}</p>
                     </div>
-                    )}
-
-                    {item.quantity > 0 && (
-                        <div id="" className="book-info p-3">
-                         <div id="book-title">
-                            <h1>{item.title}</h1>
-                          </div>
-
-                          <div className="book-author">
-                            <h3>{item.author.join(' & ')}</h3>
-                          </div>
-
-                          <div className="book-price">
-                            <span>£{item.price}</span>
-                          </div>
-
-                          {item.quantity > 0 && (<p>In Stock</p>)}
-                        </div>
-                    )}
+                    
+                  
                   </Link>
                 ))}
 
