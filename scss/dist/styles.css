@@ -1,0 +1,16 @@
+.checkout-page__container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+@media (max-width: 768px) {
+  .checkout-page__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  #checkout-items {
+    height: 301px;
+    overflow: scroll;
+  }
+}/*# sourceMappingURL=styles.css.map */

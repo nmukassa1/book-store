@@ -1,0 +1,19 @@
+$mobile: 425px;
+$tablet: 768px;
+
+
+.checkout-page__container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    @media(max-width: $tablet){
+        grid-template-columns: 1fr;
+    }
+}
+
+#checkout-items{
+    @media(max-width: $tablet){
+        height: 301px;
+        overflow: scroll;
+    }
+}
