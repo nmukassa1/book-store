@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-#fiction{
+#fiction-hero{
     background-image: url(./assets/fiction-bg.jpeg);
     background-position: center;
     background-size: cover;
 }
 
-#non-fiction{
+#non-fiction-hero{
     background-image: url(./assets/non-fiction-bg.webp);
     background-position: center;
     background-size: cover;
