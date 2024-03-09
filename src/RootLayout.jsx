@@ -62,7 +62,7 @@ function RootLayout() {
         <div id="root-layout" className='min-h-screen relative'>
             <Header cartItems={cartItems} toggleCart={toggleCart}/>
             <Cart position={cartPosition} cartItems={cartItems} setCartItems={setCartItems}/>
-            <main className='h-full'>
+            <main className=''>
                 <Outlet context={[addToCart, cartItems, setCartItems]} />
             </main>
         </div>

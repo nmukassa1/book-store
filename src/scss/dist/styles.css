@@ -13,4 +13,12 @@
     height: 301px;
     overflow: scroll;
   }
+}
+
+main {
+  height: calc(100vh - 48px);
+}
+
+header {
+  height: 48px;
 }/*# sourceMappingURL=styles.css.map */

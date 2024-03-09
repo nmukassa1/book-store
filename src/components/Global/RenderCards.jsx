@@ -28,7 +28,7 @@ function RenderCards({data, title, page, id, type, genreName, renderAmount}) {
       listOfProductsArray = listOfProducts
     }
 
-    console.log(renderAmount);
+  
 
     return ( 
        <>

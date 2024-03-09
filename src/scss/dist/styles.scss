@@ -17,3 +17,13 @@ $tablet: 768px;
         overflow: scroll;
     }
 }
+
+
+$headerHeight: 48;
+main{
+    height: calc((100vh - $headerHeight * 1px));
+}
+
+header{
+    height: $headerHeight + px;
+}
