@@ -12,14 +12,18 @@ import Home from './pages/Home'
 import Product from './pages/Product'
 import ViewAll from './pages/ViewAll'
 import Checkout from './pages/Checkout'
+import Collections from './pages/Collections'
+import ProductPage from './pages/ProductPage'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout />}>
       <Route index element={ <Home /> } />
-      <Route path='book/:book' element={ <Product /> } />
-      <Route path='view-all/:type/:id' element={ <ViewAll /> } />
+      <Route path='product' element={ <Product /> } />
+      {/* <Route path='view-all/:type/:id' element={ <ViewAll /> } /> */}
       <Route path='checkout' element={ <Checkout /> } />
+      <Route path='collection' element={ <Collections /> } />
+      {/* <Route path='product-page' element={ <ProductPage /> } /> */}
     </Route>
   )
 );

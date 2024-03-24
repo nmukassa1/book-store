@@ -17,6 +17,10 @@
 .wrapper a:hover{
     color: 	#2BE653;
 }
+.product-card:hover{
+    color: 	#2BE653;
+}
+
 
 .page-height{
     height: 100%;
