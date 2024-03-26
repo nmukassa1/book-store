@@ -3,34 +3,38 @@ import RootLayout from "../../RootLayout";
 
 function RenderCartItems({cartItems, setCartItems}) {
 
-    // const [value, setValue] = useState(1)
-
-    // useEffect(() => {
-    //     setValue(cartItems)
-    //     console.log(value);
-    // }, [cartItems])
-
-    // const handleChange = (e) => {
-    //     setValue(e.target.value)
+    const [value, setValue] = useState(1)
+    // const updateInputField = (e) => {
+    //     setValue(e.target.value);
     // }
 
-    const handleUpdateQuantity = (e) => {
+    const updateInputField = (e, key) => {
+        const updatedValue = parseInt(e.target.value);
+        setCartItems(prevItems => prevItems.map(item => {
+            if (item.key === key) {
+                return { ...item, qty: updatedValue };
+            }
+            return item;
+        }));
+    }
+
+    const updateBasket = (e) => {
         const itemToUpdate = cartItems.find(item => item.key === parseInt(e.target.parentElement.parentElement.id))
-        
-        setCartItems(
-            cartItems.map((item) => {  
-                if(item.key === itemToUpdate.key){
-                    const updatedItem = { ...itemToUpdate, qty: parseInt(e.target.value) }
-                    // setInputValue(updatedItem) 
-                    return updatedItem
-                } else{
-                    return item
-                }
-            })
-        );
 
-        // console.log(inputValue);
-
+        if(itemToUpdate){
+            const updatedValue = parseInt(e.target.parentElement.firstChild.value);
+            console.log(typeof updatedValue);
+            setCartItems(
+                cartItems.map((item) => {  
+                    if(item.key === itemToUpdate.key){
+                        const updatedItem = { ...itemToUpdate, qty: updatedValue }
+                        return updatedItem
+                    } else{
+                        return item
+                    }
+                })
+            );
+        }
     }
 
     const  handleRemoveItemFromBasket = (e) => {
@@ -39,6 +43,14 @@ function RenderCartItems({cartItems, setCartItems}) {
         setCartItems([...newBasket]);
         console.log(cartItems);
     }
+
+//     <input 
+//     type="number" 
+//     className='border border-black w-[40px] h-[40px] text-center text-2xl font-thin' 
+//     value={item.qty}
+//     onChange={(e) => updateBasket(e)}
+//     // onChange={handleChange}
+// />
 
     return ( 
         <div id="cart-items" className='h-full'>
@@ -55,12 +67,14 @@ function RenderCartItems({cartItems, setCartItems}) {
                             type="number" 
                             className='border border-black w-[40px] h-[40px] text-center text-2xl font-thin' 
                             value={item.qty}
-                            onChange={(e) => handleUpdateQuantity(e)}
+                            // value={value}
+                            // onChange={(e) => updateBasket(e)}
+                            onChange={(e) => updateInputField(e, item.key)}
                             // onChange={handleChange}
                         />
-                        {/* <button 
+                        <button 
                             className='update-item text-xs mt-1.5 tracking-wider' 
-                            onClick={(e) => handleUpdateQuantity(e)}>update</button> */}
+                            onClick={(e) => updateBasket(e)}>update</button>
                         <button 
                             className='remove-item text-xs mt-1.5 tracking-wider' 
                             onClick={(e) => handleRemoveItemFromBasket(e)}>remove</button>
